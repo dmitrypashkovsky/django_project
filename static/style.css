@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.page, .wrapper, .container, .header, .header__headline, .header__nav, .menu, .menu__item, .menu__item-link, .main, .section, .section__form, .form__row, .form__row_right, .footer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container, .main, .section, .form {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header, .form__row {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.form__row_right {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.menu__item-link, .menu__item-headline, .label {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 100%;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  -webkit-align-content: space-between;
+      -ms-flex-line-pack: justify;
+          align-content: space-between;
+}
+
+.footer {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.page {
+  background: #f4f4f4;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  margin: 15px;
+  padding: 0px;
+  background: #fff;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+  border: solid 1px #e8e8e8;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+  padding: 20px 5px;
+  border-bottom: solid 1px #e8e8e8;
+}
+
+.headline {
+  color: #898989;
+}
+
+.header__headline {
+  font-size: 32px;
+  padding: 5px 15px;
+}
+
+.nav {
+  margin: 0;
+  padding: 0;
+}
+
+.menu {
+  list-style: none;
+}
+
+.menu__item {
+  padding: 0 20px;
+}
+
+.menu__item-link, .menu__item-headline {
+  color: #69c7ee;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.menu__item-link:hover {
+  color: #ee8989;
+}
+
+.menu__item-headline {
+  color: #8989aa;
+}
+
+.main {
+  margin: 20px;
+}
+
+.main__headline {
+  color: #ee8989;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: solid 1px #e8e8e8;
+}
+
+.section {
+  margin: 10px 0;
+}
+
+.section_border {
+  border-bottom: solid 1px #e8e8e8;
+}
+
+.section__form {
+  width: 300px;
+  margin-top: 5px;
+}
+
+.form__row {
+  margin-top: 5px;
+}
+
+.form__row_margin {
+  margin-bottom: 5px;
+}
+
+.text {
+  margin: 10px 0;
+  text-indent: 25px;
+  word-wrap: break-word;
+}
+
+.error, .success {
+  margin: 20px 0;
+}
+
+.error__text, .success__text {
+  display: inline-block;
+  padding: 10px;
+  background: #ffcccc;
+  border: solid 1px #aa0000;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+}
+
+.success__text {
+  background: #ccffcc;
+  border: solid 1px #00aa00;
+}
+
+.input_text {
+  width: 120px;
+  padding: 2px 5px;
+}
+
+.input_button {
+  outline: 0;
+  color: #fff;
+  cursor: pointer;
+  padding: 4px 10px;
+  background: #4e92aa;
+  -webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  border: 0px;
+}
+
+.input_button:hover {
+  background: #254daa;
+}
+
+.footer {
+  padding: 20px;
+  border-top: solid 1px #e8e8e8;
+}
+
+.footer__text {
+  margin: 0;
+  color: #424242;
+}
+
+@media (max-width: 1199px) {
+  .header, .nav, .menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .header {
+    min-height: 146px;
+  }
+  .header__headline {
+    border-bottom: solid 1px #e8e8e8;
+  }
+  .menu__item {
+    padding: 3px 15px;
+  }
+}

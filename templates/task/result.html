@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% include "task/include/head.html" %}
 
-</body>
-</html>
+<body class="page">
+    <div class="wrapper">
+      <div class="container">
+
+        {% include "task/include/header.html" %}
+
+        <main class="main">
+          <h2 class="main__headline headline">{{ title }}</h2>
+
+          <section class="main__section section">
+                {% if error %}
+                <div class="error">
+                    <p class="error__text">{{ error }}</p>
+                </div>
+                {% elif data %}
+                <div class="success">
+                    <p class="success__text">Набор данных успешно добавлен!</p>
+                </div>
+                {% endif %}
+          </section>
+        </main>
+
+        {% include "task/include/footer.html" %}

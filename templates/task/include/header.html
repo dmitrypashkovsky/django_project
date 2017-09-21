@@ -1,0 +1,28 @@
+<header class="header">
+    <h1 class="header__headline headline">Тестовое задание</h1>
+        <nav class="header__nav nav">
+            <ul class="nav__menu menu">
+                <li class="menu__item">
+                    {% if type_page == "home" %}
+                    <p class="menu__item-headline">Добавление данных</p>
+                    {% else %}
+                    <a class="menu__item-link" href="{{ path }}/add">Добавление данных</a>
+                    {% endif %}
+                </li>
+                <li class="menu__item">
+                    {% if type_page == "check" %}
+                    <p class="menu__item-headline">Обработка всех наборов данных</p>
+                    {% else %}
+                    <a class="menu__item-link" href="{{ path }}/check">Обработка всех наборов данных</a>
+                    {% endif %}
+                </li>
+                <li class="menu__item">
+                    {% if type_page == "result" %}
+                    <p class="menu__item-headline">Выполнение тестируемой функции</p>
+                    {% else %}
+                    <a class="menu__item-link" href="{{ path }}/result">Выполнение тестируемой функции</a>
+                    {% endif %}
+                </li>
+            </ul>
+          </nav>
+        </header>

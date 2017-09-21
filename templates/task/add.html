@@ -1,10 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1>Hello, world!</h1>
-</body>
-</html>
+{% include "task/include/head.html" %}
+
+<body class="page">
+    <div class="wrapper">
+      <div class="container">
+
+        {% include "task/include/header.html" %}
+
+        <main class="main">
+          <h2 class="main__headline headline">{{ title }}</h2>
+
+          <section class="main__section section">
+            <h3 class="section__headline headline">Форма ввода новых данных</h3>
+
+                {% if error %}
+                <div class="error">
+                    <p class="error__text">{{ error }}</p>
+                </div>
+                {% elif data %}
+                <div class="success">
+                    <p class="success__text">Набор данных успешно добавлен!</p>
+                </div>
+                {% endif %}
+
+            <form class="section__form form" method="POST">
+            {% csrf_token %}
+                <div class="form__row">
+                    <label class="label">Переменная a:</label>
+                    <input class="input_text" type="text" name="a" maxlength="16">
+                </div>
+
+                <div class="form__row form__row_margin">
+                    <label class="label">Переменная b:</label>
+                    <input class="input_text" type="text" name="b" maxlength="16">
+                </div>
+
+                <div class="form__row form__row_right">
+                    <input class="input_button" type="submit" name="add" value="Добавить значение">
+                </div>
+            </form>
+
+            <form class="section__form form" method="POST" action="check">{% csrf_token %}
+              <div class="form__row form__row_right">
+                <input class="input_button" type="submit" name="add" value="Запустить обработку всех наборов данных">
+              </div>
+            </form>
+
+            <form class="section__form form" method="POST" action="check">{% csrf_token %}
+              <div class="form__row form__row_right">
+                <input class="input_button" type="submit" name="add" value="Запустить тестируемую функцию">
+              </div>
+            </form>
+          </section>
+        </main>
+
+        {% include "task/include/footer.html" %}
