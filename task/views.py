@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .forms import DataForm
 
 
 # http://127.0.0.1:8000/task/add
@@ -10,6 +11,27 @@ def add(request):
     headline = "Тестовое задание"
     title = "Добавление данных"
     path = "http://" + request.get_host() + "/task"
+
+    # Получаем POST-запрос
+    form = DataForm(request.POST or None)
+
+    # Если был произведён POST-запрос
+    if request.method == "POST" and form.is_valid():
+
+        # Регистрируем переменные формы
+        data = form.cleaned_data
+        a = data["a"]
+        b = data["b"]
+
+        # Сохраняем данные или возвращаем ошибку
+        if len(a) > 0 and len(b) > 0:
+            result = form.save()
+        elif len(a) == 0 and len(b) == 0:
+            error = "Вы не ввели значения переменных!"
+        elif len(a) == 0:
+            error = "Вы не ввели значения переменной a!"
+        elif len(b) == 0:
+            error = "Вы не ввели значения переменной b!"
 
     return render(request, 'task/add.html', locals())
 
