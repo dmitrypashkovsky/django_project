@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  position: relative;
 }
 
 .page, .wrapper, .container, .header, .header__headline, .header__nav, .menu, .menu__item, .menu__item-link, .main, .section, .section__form, .form__row, .form__row_right, .footer {
@@ -19,14 +18,7 @@
           flex-direction: column;
 }
 
-.container {
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.header, .form__row {
+.container, .header, .form__row {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
