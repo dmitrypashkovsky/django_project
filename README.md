@@ -15,6 +15,8 @@ Base requirements:
     $ rabbitmq-server
 ## Starting Flower
     $ flower -A django_project --port=5555
+## Startpage  
+    http://127.0.0.1:8000/task/add/
 ## Starting the workers
 ### First worker
     $ celery worker -A django_project --concurrency=4 -l info -Q return_exception -P eventlet
