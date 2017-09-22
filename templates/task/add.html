@@ -39,15 +39,15 @@
                 </div>
             </form>
 
-            <form class="section__form form" method="POST" action="check">{% csrf_token %}
+            <form method="POST" action="{{ path }}/check/" class="section__form form">{% csrf_token %}
               <div class="form__row form__row_right">
-                <input class="input_button" type="submit" name="add" value="Запустить обработку всех наборов данных">
+                <input class="input_button" type="submit" name="check" value="Запустить обработку всех наборов данных">
               </div>
             </form>
 
-            <form class="section__form form" method="POST" action="check">{% csrf_token %}
+            <form class="section__form form" method="POST" action="{{ path }}/result/">{% csrf_token %}
               <div class="form__row form__row_right">
-                <input class="input_button" type="submit" name="add" value="Запустить тестируемую функцию">
+                <input class="input_button" type="submit" name="result" value="Запустить тестируемую функцию">
               </div>
             </form>
           </section>
