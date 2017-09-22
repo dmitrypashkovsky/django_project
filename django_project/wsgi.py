@@ -7,10 +7,12 @@ For more information on this file, see
 https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/
 """
 
+from __future__ import absolute_import, unicode_literals
 import os
 
-from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "django_project.settings")
+
+from django.core.wsgi import get_wsgi_application
 
 application = get_wsgi_application()
